@@ -5,6 +5,7 @@ export const Container = styled.div`
     font-size: 36px;
     letter-spacing: -2px;
     font-weight: 400;
+
     span {
       color: ${({theme}) => theme.green};
     }
