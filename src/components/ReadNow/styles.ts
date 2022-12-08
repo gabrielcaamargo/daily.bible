@@ -28,3 +28,6 @@ export const SelectBibleInfo = styled.div`
   }
 `;
 
+export const Text = styled.div`
+  font-size: 24px;
+`;

@@ -1,4 +1,4 @@
-import { Container, SelectBibleInfo } from './styles';
+import { Container, SelectBibleInfo, Text } from './styles';
 
 export default function ReadNow() {
   return (
@@ -10,6 +10,16 @@ export default function ReadNow() {
         <button>NIV</button>
         <button>Aa</button>
       </SelectBibleInfo>
+
+      <Text>
+        <p><strong>1</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>2</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>3</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>4</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>5</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>6</strong> Lorem ipsum dolor sit amet.</p>
+        <p><strong>7</strong> Lorem ipsum dolor sit amet.</p>
+      </Text>
     </Container>
   );
 }
