@@ -1,3 +1,4 @@
+import BibleInfoMenu from '../BibleInfoMenu';
 import { Container, SelectBibleInfo, Text } from './styles';
 
 export default function ReadNow() {
@@ -20,6 +21,8 @@ export default function ReadNow() {
         <p><strong>6</strong> Lorem ipsum dolor sit amet.</p>
         <p><strong>7</strong> Lorem ipsum dolor sit amet.</p>
       </Text>
+
+      <BibleInfoMenu />
     </Container>
   );
 }
