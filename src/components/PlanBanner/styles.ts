@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 424px;
   border-radius: 8px;
-  background: url('src/assets/images/new-converted.png');
+  background: url('src/assets/images/new-converted.jpg');
   background-size: cover;
   background-position: center center;
   overflow: hidden;
