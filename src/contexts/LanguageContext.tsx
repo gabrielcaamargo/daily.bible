@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 
 interface LanguageInterface {
   language: string;
-  setLanguage: (setState: string) => void
+  setLanguage: (setState: string ) => void
 }
 
 const LanguageContextDefaultValues: LanguageInterface = {

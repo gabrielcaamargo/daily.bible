@@ -7,7 +7,6 @@ import Menu from '../Menu';
 
 export default function Header() {
   const {isMenuOpen, setIsMenuOpen} = useContext(MenuContext);
-  console.log(isMenuOpen);
 
   function handleOpenMenu() {
     setIsMenuOpen(true);
