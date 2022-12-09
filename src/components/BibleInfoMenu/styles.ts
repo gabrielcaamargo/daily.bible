@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 312px;
+  max-width: 242px;
   width: 100%;
   padding: 8px;
   border-radius: 8px;
-  background-color: ${({theme}) => theme.gray.light};
+  background-color: #E2E2E2;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5,1fr);
   gap: 4px;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+  position: absolute;
+  margin-top: 12px;
 `;
 
 export const Button = styled.button`
