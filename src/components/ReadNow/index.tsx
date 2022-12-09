@@ -17,7 +17,6 @@ export default function ReadNow() {
     setisChapterMenuOpen(false);
   }
 
-
   return (
     <Container>
       <h3>Read now</h3>

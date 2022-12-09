@@ -1,7 +1,18 @@
-import menu from '../../assets/icons/menu.svg';
+import { useContext } from 'react';
+import menu from '../../assets/icons/menu-closed.svg';
 import { Container } from './styles';
 
+import { MenuContext } from '../../contexts/MenuContext';
+import Menu from '../Menu';
+
 export default function Header() {
+  const {isMenuOpen, setIsMenuOpen} = useContext(MenuContext);
+  console.log(isMenuOpen);
+
+  function handleOpenMenu() {
+    setIsMenuOpen(true);
+  }
+
   return (
     <Container>
       <h1>
@@ -9,9 +20,11 @@ export default function Header() {
         <span>.</span>
         BIBLE</h1>
 
-      <button>
+      <button onClick={handleOpenMenu}>
         <img src={menu} alt="menu" />
       </button>
+
+      {isMenuOpen && <Menu />}
     </Container>
   );
 }
