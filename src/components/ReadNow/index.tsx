@@ -1,51 +1,35 @@
-import { useReducer } from 'react';
+import { useState } from 'react';
 import BibleInfoMenu from '../BibleInfoMenu';
 import { Container, SelectBibleInfo, Text } from './styles';
 
-interface State {
-  isChapterMenuOpen: boolean;
-  isVersionMenuOpen: boolean;
-}
-
-interface Action {
-  type: string
-}
 
 export default function ReadNow() {
-  function isMenuOpenDispatch(state: State, action: Action) {
-    console.log(action);
-    switch(action.type) {
-    case 'chapter':
-      return {
-        isChapterMenuOpen: !state.isChapterMenuOpen
-      };
+  const [isChapterMenuOpen, setisChapterMenuOpen] = useState<boolean>(false);
+  const [isVersionMenuOpen, setIsVersionMenuOpen] = useState<boolean>(false);
 
-    case 'version':
-      return {
-        isVersionMenuOpen: !state.isVersionMenuOpen
-      };
-    }
+  function handleOpenChapterMenu() {
+    setisChapterMenuOpen(prevState => !prevState);
+    setIsVersionMenuOpen(false);
   }
 
-  const menuInitialValue = {
-    isChapterMenuOpen: false,
-    isVersionMenuOpen: false,
-  };
+  function handleOpenVersionMenu() {
+    setIsVersionMenuOpen(prevState => !prevState);
+    setisChapterMenuOpen(false);
+  }
 
-  const [state, dispatch] = useReducer(isMenuOpenDispatch, menuInitialValue);
-  console.log(state.isChapterMenuOpen);
+
   return (
     <Container>
       <h3>Read now</h3>
 
       <SelectBibleInfo>
-        <button onClick={() => dispatch({type: 'chapter'})}>
+        <button onClick={handleOpenChapterMenu}>
           Genesis 1
-          {state.isChapterMenuOpen && <BibleInfoMenu />}
+          {isChapterMenuOpen && <BibleInfoMenu />}
         </button>
-        <button  onClick={() => dispatch({type: 'version'})}>
+        <button onClick={handleOpenVersionMenu}>
           NIV
-          {state.isVersionMenuOpen && <BibleInfoMenu />}
+          {isVersionMenuOpen && <BibleInfoMenu />}
         </button>
         <button>Aa</button>
       </SelectBibleInfo>
