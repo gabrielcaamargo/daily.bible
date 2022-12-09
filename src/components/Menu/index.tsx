@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { LanguageContext } from '../../contexts/LanguageContext';
 import { MenuContext } from '../../contexts/MenuContext';
 
 import ReactDOM from 'react-dom';
@@ -9,10 +10,15 @@ import menu from '../../assets/icons/menu-opened.svg';
 const portalRoot = document.getElementById('menu-root') as HTMLElement;
 
 export default function Menu() {
+  const {language, setLanguage} = useContext(LanguageContext);
   const { setIsMenuOpen } = useContext(MenuContext);
 
   function handleCloseMenu() {
     setIsMenuOpen(false);
+  }
+
+  function handleChangeLanguage() {
+    setLanguage(prevState => setLanguage(prevState === 'en' ? 'pt' : 'en'));
   }
 
   return ReactDOM.createPortal(
@@ -24,8 +30,8 @@ export default function Menu() {
         </button>
 
         <OptionsContainer>
-          <button><li>Change language</li></button>
-          <button><li>Support me</li></button>
+          <button onClick={handleChangeLanguage}><li>{language === 'en' ? 'Change language' : 'Mudar idioma'}</li></button>
+          <button><li>{language === 'en' ? 'Support me' : 'Me apoie'}</li></button>
         </OptionsContainer>
       </MenuContainer>
     </Container>,

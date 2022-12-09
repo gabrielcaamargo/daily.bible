@@ -12,6 +12,7 @@ export const Container = styled.div`
   box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
   position: absolute;
   margin-top: 12px;
+  margin-left: -1.5%;
 `;
 
 export const Button = styled.button`

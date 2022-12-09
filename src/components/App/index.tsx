@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import LanguageContextProvider from '../../contexts/LanguageContext';
 import MenuContextProvider from '../../contexts/MenuContext';
 import Router from '../../Router';
 import GlobalStyles from '../../styles/GlobalStyles';
@@ -11,10 +12,12 @@ export default function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <MenuContextProvider>
-          <Header />
-        </MenuContextProvider>
-        <Router />
+        <LanguageContextProvider>
+          <MenuContextProvider>
+            <Header />
+          </MenuContextProvider>
+          <Router />
+        </LanguageContextProvider>
       </ThemeProvider>
     </BrowserRouter>
   );
