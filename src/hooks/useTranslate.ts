@@ -6,7 +6,7 @@ export function useTranslate(englishString: JSX.Element, portugueseString: JSX.E
 
   if(language === 'en') {
     return englishString;
+  } else if(language === 'pt') {
+    return portugueseString;
   }
-
-  return portugueseString;
 }

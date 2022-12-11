@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslate } from '../../hooks/useTranslate';
 import BibleInfoMenu from '../BibleInfoMenu';
 import { Container, SelectBibleInfo, Text } from './styles';
 
@@ -19,7 +20,10 @@ export default function ReadNow() {
 
   return (
     <Container>
-      <h3>Read now</h3>
+      {useTranslate(
+        <h3>Read now</h3>,
+        <h3>Leia agora</h3>
+      )}
 
       <SelectBibleInfo>
         <button onClick={handleOpenChapterMenu}>
